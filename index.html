@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="株式会社カノン企画。AI×地域、人が主役。不動産賃貸・管理、フィットネススタジオ、美容サロンの運営を通じて、茨城から地域の暮らしを支えています。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="株式会社カノン企画｜AI×地域。人が主役。">
+  <meta property="og:description" content="不動産・フィットネス・美容。AIを道具に、人にしかできないことへ。">
+  <meta property="og:image" content="images/hero-pc.jpg">
+  <title>株式会社カノン企画｜AI×地域。人が主役。</title>
+  <style>
+    /* ===== Mobile first: base = スマホ、@media(min-width:761px) = PC ===== */
+    :root{--ink:#202f37;--muted:#637078;--blue:#426b7b;--blue2:#dfe9e9;--cream:#f7f7f4;--paper:#fff;--line:#dce2df;--accent:#c6d8d2;--logo-bg:#8aa5b8;--serif:"Yu Mincho","Hiragino Mincho ProN",serif;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.8;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}img{display:block;max-width:100%}
+    h1,h2,h3,p{margin-top:0}
+    .wrap{width:calc(100% - 36px);max-width:1120px;margin:auto}
+
+    /* header */
+    .site-header{height:70px;display:flex;align-items:center;position:sticky;top:0;z-index:10;background:rgba(247,247,244,.68);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,226,223,.6)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:650;letter-spacing:.06em}
+    .header-logo{height:46px;width:auto}
+    .brand-mark{width:34px;height:34px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-family:var(--serif);font-size:17px;flex-shrink:0}
+    .brand small{display:block;font-size:9px;color:var(--muted);font-weight:500;letter-spacing:.16em;line-height:1.3}
+    .mobile-menu{display:block;border:0;background:transparent;color:var(--ink);font-size:23px;padding:8px;cursor:pointer}
+    .nav-links{display:none;font-size:13px;letter-spacing:.08em;color:#48565d}
+    .nav-links.open{display:flex;position:absolute;left:0;right:0;top:69px;background:var(--cream);padding:22px 24px 26px;flex-direction:column;align-items:stretch;gap:18px;border-bottom:1px solid var(--line)}
+    .nav-links.open a{padding:4px}
+    .nav-links a:hover{color:var(--blue)}
+
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:13px 20px;font-size:12px;letter-spacing:.08em;border:1px solid var(--blue);transition:.2s}
+    .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:#315463}
+    .btn-plain{color:var(--blue)}.btn-plain:hover{background:#edf1ef}
+    .arrow{font-size:16px;line-height:1}
+
+    /* hero（スマホ：画像なし、文字のみ） */
+    .hero{position:relative;overflow:hidden;background:#7fbbea;height:min(176vw,calc(100svh - 70px));min-height:520px}
+    .hero-bg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%}
+    .hero-bg img{object-fit:cover;object-position:50% 85%}
+    .hero-text{position:absolute;left:0;right:0;top:46px;z-index:1}
+    h1{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Light","Yu Gothic","Noto Sans JP",system-ui,sans-serif;font-weight:200;font-style:italic;letter-spacing:.06em;line-height:1.4;font-size:clamp(38px,11.5vw,56px);margin:0 0 22px;color:#12304b}
+    .hero-rule{width:64px;height:2px;background:linear-gradient(90deg,#2f6c9b,#8ec0e4);margin:0 0 20px}
+    .hero-copy{font-size:13px;color:#24506f;letter-spacing:.08em;line-height:2.1;margin:0;font-weight:500}
+    .hero-actions{display:none;gap:12px;margin-top:30px;flex-wrap:wrap}
+
+    /* sections */
+    .section{padding:64px 0}.section-white{background:var(--paper)}
+    .section-head{margin-bottom:26px}
+    .section-kicker{font-size:10px;letter-spacing:.2em;color:var(--blue);font-weight:700}
+    .section-title{font-family:var(--serif);font-size:clamp(25px,7vw,38px);font-weight:500;line-height:1.5;letter-spacing:.05em;margin:8px 0 0}
+    .section-intro{color:var(--muted);font-size:13px;margin:16px 0 0;line-height:2}
+
+    /* message */
+    .message-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .about-statement{font-family:var(--serif);font-size:clamp(25px,7vw,36px);line-height:1.85;letter-spacing:.05em;font-weight:500;margin:8px 0 0}
+    .about-statement em{font-style:normal;color:var(--blue)}
+    .about-text{font-size:13px;color:var(--muted);line-height:2.2}.about-text p{margin-bottom:16px}
+    .points{margin-top:26px;border-top:1px solid var(--line)}
+    .point{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+    .point b{font-family:var(--serif);font-weight:500;color:var(--blue);font-size:15px;letter-spacing:.08em}
+    .point h3{font-family:var(--serif);font-weight:500;font-size:16px;margin:0 0 4px;color:var(--ink);line-height:1.6}
+    .point p{margin:0;font-size:12px;line-height:2;color:var(--muted)}
+
+    /* business */
+    .business-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .business-card{border:1px solid var(--line);background:#fff;min-width:0;display:grid;grid-template-columns:40% 60%}
+    .business-visual{position:relative;overflow:hidden;background:#e9efeb;min-height:190px}
+    .business-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .visual-no{position:absolute;left:0;top:0;font-family:var(--serif);font-size:10px;letter-spacing:.08em;color:#355866;z-index:2;background:rgba(255,255,255,.85);padding:5px 9px}
+    .card-body{padding:18px 16px}
+    .card-label{font-size:10px;color:var(--blue);letter-spacing:.16em}
+    .card-title{font-family:var(--serif);font-size:18px;font-weight:500;margin:7px 0 10px}
+    .card-copy{font-size:11px;color:var(--muted);line-height:2;margin-bottom:12px}
+    .card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:13px;color:var(--blue);font-size:11px;letter-spacing:.06em}
+
+    /* company */
+    .facts{margin:0;border-top:1px solid var(--line)}
+    .fact-row{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:12px}
+    .fact-row dt{color:var(--muted)}.fact-row dd{margin:0}
+    .fact-row a{color:var(--blue);border-bottom:1px solid rgba(66,107,123,.35);word-break:break-all}
+
+    /* contact */
+    .contact{background:#e7eeea;padding:45px 0}
+    .contact h2{font-family:var(--serif);font-size:clamp(25px,7vw,34px);font-weight:500;margin:8px 0 10px}
+    .contact p{font-size:13px;color:#5d6e70;margin:0;max-width:600px}
+    .contact .btn{margin-top:23px}
+
+    /* footer：白いロゴがブルーグレー背景に載る */
+    .footer{background:var(--logo-bg);color:#1d3341;padding:34px 0 22px}
+    .footer-logo{display:block;width:150px;margin:-10px 0 0 -19px}
+    .footer-logo img{width:100%;height:auto}
+    .footer-top{padding-bottom:22px;border-bottom:1px solid rgba(29,51,65,.22)}
+    .footer-address{font-size:12px;color:#1d3341;line-height:2;margin-top:14px}
+    .footer-address a{border-bottom:1px solid rgba(29,51,65,.4)}
+    .footer-bottom{padding-top:16px;color:#1d3341;font-size:10px;letter-spacing:.05em}
+    .footer-bottom>span{display:block;margin-top:5px}
+
+    /* ===== PC ===== */
+    @media(min-width:761px){
+      .wrap{width:calc(100% - 48px)}
+      html{scroll-padding-top:88px}
+      .site-header{height:82px}
+      .header-logo{height:50px}
+      .mobile-menu{display:none}
+      .nav-links{display:flex;gap:28px;align-items:center;font-size:12px}
+      .nav-links .nav-contact{padding:10px 17px;border:1px solid #9fb4b8;border-radius:2px}
+
+      /* トップ画像：<picture>でPC用/スマホ用を出し分け（使う方だけ読み込まれる） */
+      .hero{height:clamp(520px,56.3vw,calc(100svh - 82px))}
+      .hero-bg img{object-position:50% 100%}
+      .hero-text{left:max(24px,7vw);right:auto;top:8%;width:auto;margin:0}
+      h1{font-size:clamp(40px,5.6vw,78px);margin:0 0 24px}
+      .hero-rule{width:76px;margin-bottom:22px}
+      .hero-copy{font-size:clamp(13px,1.2vw,16px)}
+      .hero-actions{display:flex}
+      .hero .btn-plain{background:rgba(255,255,255,.88)}
+
+      .section{padding:88px 0}
+      .section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:36px}
+      .section-intro{max-width:420px;margin:0}
+      .message-grid{grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+      .point{grid-template-columns:44px 1fr}.point h3{font-size:17px}
+      .business-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+      .business-card{display:block}
+      .business-visual{height:230px;min-height:0}
+      .visual-no{font-size:11px;padding:6px 12px}
+      .card-body{padding:24px 22px 23px}
+      .card-title{font-size:21px}
+      .card-copy{font-size:12px;min-height:72px;margin-bottom:16px}
+      .fact-row{grid-template-columns:150px 1fr;gap:20px}
+      .fact-row a{word-break:normal}
+      .contact{padding:62px 0}
+      .contact-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+      .contact .btn{margin-top:0;flex-shrink:0}
+      .footer{padding:36px 0 22px}
+      .footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:26px}
+      .footer-address{text-align:right;margin-top:0}
+      .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:17px}
+      .footer-bottom>span{margin-top:0}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="株式会社カノン企画 トップ">
+      <img class="header-logo" src="images/logo-gray.svg" alt="KANON KIKAKU Inc.（株式会社カノン企画）" width="497" height="412">
+    </a>
+    <button class="mobile-menu" aria-label="メニューを開く" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="#message">私たちの考え</a><a href="#business">事業紹介</a><a href="#company">会社概要</a><a class="nav-contact" href="#contact">お問い合わせ ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <picture class="hero-bg">
+      <source media="(min-width:761px)" srcset="images/hero-pc.webp" type="image/webp">
+      <source media="(min-width:761px)" srcset="images/hero-pc.jpg">
+      <source srcset="images/hero-sp.webp" type="image/webp">
+      <img src="images/hero-sp.jpg" alt="住宅地と田園が広がる街並みと山並み" width="941" height="1672" fetchpriority="high">
+    </picture>
+    <div class="wrap hero-text">
+      <h1>AI × 地域。<br>人が主役。</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-copy">不動産・フィットネス・美容。<br>人の暮らしに寄り添う事業を、つくり続ける。</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#message">私たちの考え <span class="arrow">↘</span></a><a class="btn btn-plain" href="#business">事業紹介 <span class="arrow">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="message">
+    <div class="wrap message-grid">
+      <div><div class="section-kicker">OUR MESSAGE</div><h2 class="about-statement">AIは、道具。<br><em>人が主役</em>の<br>地域づくりを。</h2></div>
+      <div class="about-text">
+        <p>私たちが事業を営むのは、人と人との関わりが価値になる分野です。住まい、からだ、美しさ。どれも、そこで暮らし、通ってくださる方の顔が見えてこそ成り立ちます。</p>
+        <p>だからこそAIは、その主役の座を代わるためではなく、支えるために使います。事務や連絡といった定型的な作業をAIに任せ、スタッフが目の前の方と向き合う時間を増やし、一人ひとりの力を掛け合わせて、チームの可能性を最大化する。それが私たちの考える「AI×地域」です。</p>
+        <div class="points">
+          <div class="point"><b>01</b><div><h3>人にしかできないことを、人に。</h3><p>気づかい、会話、判断。現場の一番大切な部分は、これからも人が担います。</p></div></div>
+          <div class="point"><b>02</b><div><h3>チームの可能性を最大化する。</h3><p>定型的な作業を減らし、一人ひとりが力を発揮できる環境を整えることで、チーム全体の力を引き出します。</p></div></div>
+          <div class="point"><b>03</b><div><h3>AIは、現場を支える裏方として。</h3><p>日々の運営で手間のかかる作業を見直し、必要な場面でAIを取り入れます。</p></div></div>
+          <div class="point"><b>04</b><div><h3>地域に根ざして、続けていく。</h3><p>つくばみらいから、地域のお客様・関係者との信頼を積み重ねる事業運営を目指します。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="business">
+    <div class="wrap">
+      <div class="section-head"><div><div class="section-kicker">OUR BUSINESS</div><h2 class="section-title">暮らしに関わる、3つの事業。</h2></div><p class="section-intro">地域に根ざし、それぞれの分野で必要とされるサービスを運営しています。今後も既存事業の枠を超えて地域で必要とされる事業展開を続けてまいります。</p></div>
+      <div class="business-grid">
+        <article class="business-card"><div class="business-visual"><img src="images/property.jpg" alt="緑に囲まれた賃貸マンションの外観" loading="lazy"><span class="visual-no">01 / REAL ESTATE</span></div><div class="card-body"><div class="card-label">REAL ESTATE</div><h3 class="card-title">不動産事業</h3><p class="card-copy">不動産の所有・賃貸・管理を通じて、安心して暮らせる住環境を支えます。</p><div class="card-foot"><span>賃貸・管理</span><span>↗</span></div></div></article>
+        <article class="business-card"><div class="business-visual"><img src="images/studio.jpg" alt="マシンピラティスのスタジオ" loading="lazy"><span class="visual-no">02 / FITNESS</span></div><div class="card-body"><div class="card-label">FITNESS</div><h3 class="card-title">フィットネス事業</h3><p class="card-copy">女性向けスタジオ「ソエルスタジオ南越谷」を運営。マシンピラティスやよもぎ蒸しなどを提供しています。</p><div class="card-foot"><span>スタジオ運営</span><span>↗</span></div></div></article>
+        <article class="business-card"><div class="business-visual"><img src="images/salon.jpg" alt="フェイシャルトリートメントを受けるお客様" loading="lazy"><span class="visual-no">03 / BEAUTY</span></div><div class="card-body"><div class="card-label">BEAUTY</div><h3 class="card-title">美容事業</h3><p class="card-copy">水戸エリアを中心に、眉毛サロンやハーブピーリングを取り扱うエステサロンを運営しています。</p><div class="card-foot"><span>サロン運営</span><span>↗</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="company">
+    <div class="wrap">
+      <div class="section-head"><div><div class="section-kicker">COMPANY PROFILE</div><h2 class="section-title">会社概要</h2></div></div>
+      <dl class="facts">
+        <div class="fact-row"><dt>会社名</dt><dd>株式会社カノン企画</dd></div>
+        <div class="fact-row"><dt>代表者</dt><dd>代表取締役　関 信司</dd></div>
+        <div class="fact-row"><dt>設立</dt><dd>2006年8月16日</dd></div>
+        <div class="fact-row"><dt>所在地</dt><dd>茨城県つくばみらい市</dd></div>
+        <div class="fact-row"><dt>事業内容</dt><dd>不動産賃貸・管理、フィットネススタジオ運営、美容サロン運営</dd></div>
+        <div class="fact-row"><dt>連絡先</dt><dd><a href="mailto:s-seki@kanonkikaku.com">s-seki@kanonkikaku.com</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner"><div><div class="section-kicker">CONTACT</div><h2>お問い合わせ</h2><p>事業や取り組みについてのご質問・ご相談は、メールにてお気軽にご連絡ください。</p></div><a class="btn btn-primary" href="mailto:s-seki@kanonkikaku.com">メールを送る <span class="arrow">→</span></a></div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="footer-logo" href="#top" aria-label="KANON KIKAKU Inc. トップへ"><img src="images/logo-white.svg" alt="KANON KIKAKU Inc." width="642" height="544"></a>
+      <div class="footer-address">茨城県つくばみらい市<br><a href="mailto:s-seki@kanonkikaku.com">s-seki@kanonkikaku.com</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> KANON KIKAKU INC.</span><span>AI×地域。人が主役。</span></div>
+  </div>
+</footer>
+<script>
+  const menuButton=document.querySelector('.mobile-menu');
+  const navLinks=document.querySelector('.nav-links');
+  menuButton.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.textContent=isOpen?'×':'☰';});
+  navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰';}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
